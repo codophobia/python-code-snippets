@@ -315,6 +315,53 @@ deque([4, 3, 1, 2])
 2
 4
 '''
+
+# To fetch last n values only
+
+last_5 = deque(maxlen=5)
+
+for i in range(1, 10+1):
+    last_5.append(i)
+
+'''
+deque([6, 7, 8, 9, 10], maxlen=5)
+6
+7
+8
+9
+10
+'''
+
+# To rotate n times or -n times
+
+country = deque(list("America"))
+
+country.rotate(2)
+print(country)
+country.rotate(-3)
+print(country)
+
+'''
+deque(['c', 'a', 'A', 'm', 'e', 'r', 'i'])
+c
+a
+A
+m
+e
+r
+i
+
+deque(['m', 'e', 'r', 'i', 'c', 'a', 'A'])
+m
+e
+r
+i
+c
+a
+A
+'''
+
+
 ```
  
 ## Queue
