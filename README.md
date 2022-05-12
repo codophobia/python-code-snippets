@@ -662,10 +662,9 @@ graph = defaultdict(list)
 graph[1].append(2) # 1 -> 2
 graph[2].append(3) # 1 -> 2 -> 3
 graph[4].append(1) # 4 -> 1 -> 2 -> 3
+
  
-visited = set()
- 
-def dfs(node, graph, visited):
+def dfs(node, graph, visited=set()):
   if node not in visited:
       print(node)
       visited.add(node)
