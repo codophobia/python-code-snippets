@@ -315,6 +315,53 @@ deque([4, 3, 1, 2])
 2
 4
 '''
+
+# To fetch last n values only
+
+last_5 = deque(maxlen=5)
+
+for i in range(1, 10+1):
+    last_5.append(i)
+
+'''
+deque([6, 7, 8, 9, 10], maxlen=5)
+6
+7
+8
+9
+10
+'''
+
+# To rotate n times or -n times
+
+country = deque(list("America"))
+
+country.rotate(2)
+print(country)
+country.rotate(-3)
+print(country)
+
+'''
+deque(['c', 'a', 'A', 'm', 'e', 'r', 'i'])
+c
+a
+A
+m
+e
+r
+i
+
+deque(['m', 'e', 'r', 'i', 'c', 'a', 'A'])
+m
+e
+r
+i
+c
+a
+A
+'''
+
+
 ```
  
 ## Queue
@@ -662,10 +709,9 @@ graph = defaultdict(list)
 graph[1].append(2) # 1 -> 2
 graph[2].append(3) # 1 -> 2 -> 3
 graph[4].append(1) # 4 -> 1 -> 2 -> 3
+
  
-visited = set()
- 
-def dfs(node, graph, visited):
+def dfs(node, graph, visited=set()):
   if node not in visited:
       print(node)
       visited.add(node)
